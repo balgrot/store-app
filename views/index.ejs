@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <form action="/" method="post"> 
+        <label for="store">Store</label>
+        <select name="store" id="store" class="form-control">
+            <option value="">Select a store</option>
+            <% for(var count = 0; count < stores.length; count++) { %>
+
+            <option value="<%=stores[count].id %>"><%=stores[count].name %></option>
+
+            <% } %>
+        </select>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description">
+        <label for="price">Price</label>
+        <input type="text" name="price" id="price">
+        <input type="submit">
+    </form>
+    <br />
+    <br />
+    <br />
+    <br />
+    <table>
+      <tr>
+        <th> Product </th>
+        <th> Description </th>
+        <th>Price </th>
+      </tr>
+      <tr>
+      <% for(var count = 0; count < products.length; count++) { %>
+        <td><%=products[count].name%> </td>
+        <td><%=products[count].description%> </td>
+        <td><%=products[count].price%> </td>
+
+        <% } %>
+      </tr>
+    </table>  
+  </body>
+</html>
